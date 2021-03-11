@@ -35,18 +35,5 @@ steps:
       - "."
     entrypoint: docker
     name: "docker:latest"
-  - 
-    args: 
-      - build
-      - "-t"
-      - "snobrost/demojava:latest"
-      - "."
-    entrypoint: docker
-    name: "docker:latest"
-  - 
-    args: 
-      - push
-      - "snobrost/demojava:latest"
-    entrypoint: docker
-    name: "docker:latest"
+
 
