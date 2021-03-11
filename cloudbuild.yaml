@@ -32,7 +32,6 @@ steps:
     args: 
       - push
       - "snobrost/demojava:latest"
-      - "."
     entrypoint: docker
     name: "docker:latest"
 
