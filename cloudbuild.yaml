@@ -1,29 +1,8 @@
 --- 
 steps: 
   - 
-    name: "maven:latest"
-    entrypoint: mvn
+    name: "bash"
+    entrypoint: cd
     args: 
-      - install
-  - 
-    args: 
-      - test
-    entrypoint: mvn
-    name: "maven:latest"
-  - 
-    args: 
-      - i
-    entrypoint: npm
-    name: "node:latest"
-  - 
-    args: 
-      - run
-      - build
-    entrypoint: npm
-    name: "node:latest"
-  - 
-    args: 
-      - run
-      - test
-    entrypoint: npm
-    name: "node:latest"
+      - jsproject
+
