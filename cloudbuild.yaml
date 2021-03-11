@@ -5,7 +5,6 @@ steps:
       - clean
       - install
       - "-DskipTest"
-      - "."
     entrypoint: mvn
     name: "maven:latest"
 
