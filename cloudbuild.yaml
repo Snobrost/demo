@@ -1,8 +1,8 @@
 --- 
 steps: 
   - 
+    name: "maven:latest"
+    entrypoint: mvn
     args: 
       - install
-    entrypoint: mvn
-    name: "maven:latest"
 
