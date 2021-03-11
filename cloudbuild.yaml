@@ -15,9 +15,9 @@ steps:
     args: 
       - login
       - "-u"
-      - _DOCKERLOGIN
+      - snobrost
       - "-p"
-      - _DOCKERMDP
+      - xspmxv34
     entrypoint: docker
     name: "docker:latest"
   - 
