@@ -10,7 +10,27 @@ steps:
       - test
     entrypoint: mvn
     name: "maven:latest"
-  
+ 
+  - 
+    args: 
+      - i
+    entrypoint: npm
+    dir: "./jsproject/"
+    name: "node:latest"
+  - 
+    args: 
+      - run
+      - build
+    entrypoint: npm
+    dir: "./jsproject/"
+    name: "node:latest"
+  - 
+    args: 
+      - run
+      - test
+    entrypoint: npm
+    dir: "./jsproject/"
+    name: "node:latest"
   - 
     args: 
       - login
@@ -35,4 +55,19 @@ steps:
     entrypoint: docker
     name: "docker:latest"
 
-
+  - 
+    args: 
+      - build
+      - "-t"
+      - "snobrost/demojavascript:latest"
+      - "."
+    entrypoint: docker
+    dir: "./jsproject/"
+    name: "docker:latest"
+  - 
+    args: 
+      - push
+      - "snobrost/demojavascript:latest"
+    entrypoint: docker
+    dir: "./jsproject/"
+    name: "docker:latest"
