@@ -1,43 +1,15 @@
 steps:
-- name: maven:latest
-   entrypoint: mvn
-   args: ['clean', 'install', '-DskipTest']
-- name: maven:latest
-   entrypoint: mvn
-   args: ['test']
--name: node:latest
-   entrypoint: cd
-   args: ['jsproject']
--name: node:latest
-   entrypoint: npm
-   args: ['i']
--name: node:latest
-   entrypoint: npm
-   args: ['run', 'build']
--name:node:latest
-   entrypoint: cd
-   args: ['jsproject']
--name: node:latest
-   entrypoint: npm
-   args: ['run', 'test']
--name:docker:latest
-   entrypoint: docker
-   args: ['login', '-u', '_DOCKERLOGIN', '-p', '_DOCKERMDP']
--name:docker:latest
-   entrypoint: docker
-   args: ['build', '-t', 'snobrost/demojava:latest', '.']
--name:docker:latest
-   entrypoint: docker
-   args: ['push', 'snobrost/demojava:latest']
--name:docker:latest
-   entrypoint: docker
-   args: ['login', '-u', '_DOCKERLOGIN', '-p', '_DOCKERMDP']
--name:docker:latest
-   entrypoint: cd
-   args: ['jsproject']
--name:docker:latest
-   entrypoint: docker
-   args: ['build', '-t', 'snobrost/demojavascript:latest', '.']
--name:docker:latest
-   entrypoint: docker
-   args: ['push', 'snobrost/demojavascript:latest']
+- name: maven:latest entrypoint: mvn args: ['clean', 'install', '-DskipTest']
+- name: maven:latest entrypoint: mvn args: ['test']
+-name: node:latest entrypoint: cd args: ['jsproject']
+-name: node:latest entrypoint: npm args: ['i']
+-name: node:latest entrypoint: npm args: ['run', 'build']
+-name:node:latest entrypoint: cd args: ['jsproject']
+-name: node:latest entrypoint: npm  args: ['run', 'test']
+-name:docker:latest entrypoint: docker args: ['login', '-u', '_DOCKERLOGIN', '-p', '_DOCKERMDP']
+-name:docker:latest entrypoint: docker args: ['build', '-t', 'snobrost/demojava:latest', '.']
+-name:docker:latest entrypoint: docker args: ['push', 'snobrost/demojava:latest']
+-name:docker:latest entrypoint: docker args: ['login', '-u', '_DOCKERLOGIN', '-p', '_DOCKERMDP']
+-name:docker:latest entrypoint: cd args: ['jsproject']
+-name:docker:latest entrypoint: docker args: ['build', '-t', 'snobrost/demojavascript:latest', '.']
+-name:docker:latest entrypoint: docker args: ['push', 'snobrost/demojavascript:latest']
