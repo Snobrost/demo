@@ -22,7 +22,7 @@ steps:
    args: ['run', 'test']
 -name:docker:latest
    entrypoint: docker
-   args: ['login', '-u', '$DOCKERLOGIN', '-p', '$DOCKERMDP']
+   args: ['login', '-u', '_DOCKERLOGIN', '-p', '_DOCKERMDP']
 -name:docker:latest
    entrypoint: docker
    args: ['build', '-t', 'snobrost/demojava:latest', '.']
@@ -31,7 +31,7 @@ steps:
    args: ['push', 'snobrost/demojava:latest']
 -name:docker:latest
    entrypoint: docker
-   args: ['login', '-u', '$DOCKERLOGIN', '-p', '$DOCKERMDP']
+   args: ['login', '-u', '_DOCKERLOGIN', '-p', '_DOCKERMDP']
 -name:docker:latest
    entrypoint: cd
    args: ['jsproject']
