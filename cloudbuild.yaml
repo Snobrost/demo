@@ -15,9 +15,9 @@ steps:
     args: 
       - login
       - "-u"
-      - _DOCKERLOGIN
+      - $_DOCKERLOGIN
       - "-p"
-      - _DOCKERMDP
+      - $_DOCKERMDP
     entrypoint: docker
     name: "docker:latest"
   - 
