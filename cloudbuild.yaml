@@ -1,9 +1,53 @@
 --- 
 steps: 
+  - 
+    name: "maven:latest"
+    entrypoint: mvn
+    args: 
+      - install
+  - 
+    args: 
+      - test
+    entrypoint: mvn
+    name: "maven:latest"
   
   - 
     args: 
-      - i
-    entrypoint: npm
-    name: "jsproject/node:latest"
-  
+      - login
+      - "-u"
+      - _DOCKERLOGIN
+      - "-p"
+      - _DOCKERMDP
+    entrypoint: docker
+    name: "docker:latest"
+  - 
+    args: 
+      - build
+      - "-t"
+      - "snobrost/demojava:latest"
+      - "."
+    entrypoint: docker
+    name: "docker:latest"
+  - 
+    args: 
+      - push
+      - "snobrost/demojava:latest"
+      - "."
+    entrypoint: docker
+    name: "docker:latest"
+  - 
+    args: 
+      - build
+      - "-t"
+      - "snobrost/demojava:latest"
+      - "."
+    entrypoint: docker
+    name: "docker:latest"
+  - 
+    args: 
+      - push
+      - "snobrost/demojava:latest"
+      - "."
+    entrypoint: docker
+    name: "docker:latest"
+
