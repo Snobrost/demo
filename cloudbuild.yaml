@@ -15,9 +15,9 @@ steps:
     args: 
       - login
       - "-u"
-      - snobrost
+      - _DOCKERLOGIN
       - "-p"
-      - xspmxv34
+      - _DOCKERMDP
     entrypoint: docker
     name: "docker:latest"
   - 
@@ -47,7 +47,6 @@ steps:
     args: 
       - push
       - "snobrost/demojava:latest"
-      - "."
     entrypoint: docker
     name: "docker:latest"
 
