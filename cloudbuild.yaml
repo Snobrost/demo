@@ -12,11 +12,6 @@ steps:
     name: "maven:latest"
   - 
     args: 
-      - jsproject
-    entrypoint: cd
-    name: "node:latest"
-  - 
-    args: 
       - i
     entrypoint: npm
     name: "node:latest"
@@ -32,67 +27,3 @@ steps:
       - test
     entrypoint: npm
     name: "node:latest"
-  - 
-    args: 
-      - ".."
-    entrypoint: cd
-    name: "docker:latest"
-  - 
-    args: 
-      - login
-      - "-u"
-      - _DOCKERLOGIN
-      - "-p"
-      - _DOCKERMDP
-    entrypoint: docker
-    name: "docker:latest"
-  - 
-    args: 
-      - build
-      - "-t"
-      - "snobrost/demojava:latest"
-      - "."
-    entrypoint: docker
-    name: "docker:latest"
-  - 
-    args: 
-      - push
-      - "snobrost/demojava:latest"
-      - "."
-    entrypoint: docker
-    name: "docker:latest"
-  - 
-    args: 
-      - build
-      - "-t"
-      - "snobrost/demojava:latest"
-      - "."
-    entrypoint: docker
-    name: "docker:latest"
-  - 
-    args: 
-      - push
-      - "snobrost/demojava:latest"
-      - "."
-    entrypoint: docker
-    name: "docker:latest"
-  - 
-    args: 
-      - jsproject
-    entrypoint: cd
-    name: "docker:latest"
-  - 
-    args: 
-      - build
-      - "-t"
-      - "snobrost/demojavascript:latest"
-      - "."
-    entrypoint: docker
-    name: "docker:latest"
-  - 
-    args: 
-      - push
-      - "snobrost/demojavascript:latest"
-      - "."
-    entrypoint: docker
-    name: "docker:latest"
