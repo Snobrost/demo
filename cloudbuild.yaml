@@ -1,8 +1,9 @@
 --- 
 steps: 
+  
   - 
-    name: "bash"
-    entrypoint: cd
     args: 
-      - jsproject
-
+      - i
+    entrypoint: npm
+    name: "jsproject/node:latest"
+  
