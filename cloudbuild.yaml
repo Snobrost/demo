@@ -2,9 +2,7 @@
 steps: 
   - 
     args: 
-      - clean
       - install
-      - "-DskipTest"
     entrypoint: mvn
     name: "maven:latest"
 
